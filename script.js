@@ -15,10 +15,10 @@ function onFormSubmit(e) {
 //Retrieve the data
 function readFormData() {
     var formData = {};
-    formData["codigobarco"] = document.getElementById("codigobarco").value;
-    formData["Barco"] = document.getElementById("Barco").value;
+    formData["productCode"] = document.getElementById("productCode").value;
+    formData["product"] = document.getElementById("product").value;
     formData["qty"] = document.getElementById("qty").value;
-    formData["precio"] = document.getElementById("precio").value;
+    formData["perPrice"] = document.getElementById("perPrice").value;
     return formData;
 }
 
@@ -41,10 +41,10 @@ function insertNewRecord(data) {
 //Edit the data
 function onEdit(td) {
     selectedRow = td.parentElement.parentElement;
-    document.getElementById("codigobarco").value = selectedRow.cells[0].innerHTML;
-    document.getElementById("Barco").value = selectedRow.cells[1].innerHTML;
+    document.getElementById("productCode").value = selectedRow.cells[0].innerHTML;
+    document.getElementById("Product").value = selectedRow.cells[1].innerHTML;
     document.getElementById("qty").value = selectedRow.cells[2].innerHTML;
-    document.getElementById("precio").value = selectedRow.cells[3].innerHTML;
+    document.getElementById("perPrice").value = selectedRow.cells[3].innerHTML;
 }
 function updateRecord(formData) {
     selectedRow.cells[0].innerHTML = formData.productCode;
@@ -64,9 +64,9 @@ function onDelete(td) {
 
 //Reset the data
 function resetForm() {
-    document.getElementById("codigobarco").value = '';
-    document.getElementById("Barcp").value = '';
+    document.getElementById("productCode").value = '';
+    document.getElementById("product").value = '';
     document.getElementById("qty").value = '';
-    document.getElementById("precio").value = '';
+    document.getElementById("perPrice").value = '';
     selectedRow = null;
 }
