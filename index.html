@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA DE BARCOS </title>
+        <!-- Carga el núcleo de Firebase JS SDK -->
+        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+        <!-- Agrega el manejo de autenticación. -->
+        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js">
+        </script>
+        <script
+        src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js">
+        </script>
+</head>
+<body>
+    
+</body>
+</html>
+<head>
+    <h1>SISTEMA DE BARCOS</h1>
+    <title>Crud operaciones</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="onFormSubmit()">
+                    <div>
+                        <label for="codigobarco">Codigo De Barco</label>
+                        <input type="text" name="codigobarco" id="codigobarco">
+                    </div>
+                    <div>
+                        <label for="Barco">Nombre De Barco</label>
+                        <input type="text" name="Barco" id="Barco">
+                    </div>
+                    <div>
+                        <label for="qty">Qty</label>
+                        <input type="number" name="qty" id="qty">
+                    </div>
+                    <div>
+                        <label for="precio">Precio Del Barco</label>
+                        <input type="number" name="precio" id="precio">
+                    </div>
+
+                    <div class="form_action--button">
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </form>
+
+                <td>
+                    <table class="list" id="storeList">
+                        <thead>
+                            <tr>
+                                <th>Codigo De Carco</th>
+                                <th>Nombre De Barco</th>
+                                <th>Qty</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </td>
+        </tr>
+    </table>
+</head>
+<body>
+    <script>
+      // @ts-check
+    /** Nombre de usuario atenticado por Firebase. */
+    let usuario = "";
+    let avatar = "";
+    /** Conexión al sistema de autenticación de Firebase. */
+    // @ts-ignore
+    const auth = firebase.auth();
+    /** Tipo de autenticación de usuarios. En este caso es con Google. */
+    // @ts-ignore
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+
+    </script>
+    <script type="text/javascript" src="init.js"></script>
+</script>
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
