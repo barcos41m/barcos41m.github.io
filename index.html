@@ -1,23 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SISTEMA DE BARCOS </title>
-        <!-- Carga el núcleo de Firebase JS SDK -->
-        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-        <!-- Agrega el manejo de autenticación. -->
-        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js">
-        </script>
-        <script
-        src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js">
-        </script>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width,
+       initial-scale=1.0">
+  <title>Sesión</title>
+  <!--
+    Carga el núcleo de Firebase
+    JS SDK
+  -->
+  <script
+    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js">
+    </script>
+  <!--
+    Agrega el manejo de
+    autenticación.
+  -->
+  <script
+    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js">
+    </script>
+  <!--
+    Agrega el manejo de bases de
+    datos.
+  -->
+  <script
+    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js">
+    </script>
+  <!--
+    Configura la app usando la
+    información del sitio de
+    Firebase.
+  -->
+  <script src="js/init.js">
+  </script>
+  <script type="module"
+    src="cmp/mi-nav.js">
+    </script>
+  <script type="module"
+    src="cmp/mi-footer.js">
+    </script>
+  <script type="module"
+    src="cmp/mi-progreso.js">
+    </script>
+  <link rel="stylesheet"
+    href="css/estilos.css">
 </head>
-<body>
-    
-</body>
-</html>
 <head>
     <h1>SISTEMA DE BARCOS</h1>
     <title>Crud operaciones</title>
@@ -71,18 +99,10 @@
         </tr>
     </table>
 </head>
-<body>
-    <script>
-      // @ts-check
-    /** Nombre de usuario atenticado por Firebase. */
-    let usuario = "";
-    let avatar = "";
-    /** Conexión al sistema de autenticación de Firebase. */
-    // @ts-ignore
-    const auth = firebase.auth();
-    /** Tipo de autenticación de usuarios. En este caso es con Google. */
-    // @ts-ignore
-    const provider = new firebase.auth.GoogleAuthProvider();
+
+
+
+
 
 
     </script>
