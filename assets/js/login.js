@@ -23,9 +23,10 @@ var loginWithGithub = function(){
 var loginWithGoogle = function(){
 
     firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    .then(() => {
+    .then( () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         return  firebase.auth().signInWithPopup(provider);
+    
     })
     .catch((error) => {
     });
@@ -47,6 +48,8 @@ firebase.auth().onAuthStateChanged((user) => {
     if (user) {
         updateUser(user);
         user_panel.style.display = "inline-block"
+
+
     } else {
         login_panel.style.display = "inline-block"
     }
