@@ -92,12 +92,9 @@
     
 
     var logout = function(){
-      function redireccion(){
-        location.href="index2.hmtl"
-    }
       firebase.auth().signOut().then(function() {
         user_name_h1.innerHTML = "Acceso";
-        user_image.src = "assets/images/JimeCoding.jpg";
+        user_image.src = "";
         login_btn.style.display = "inline-block";
         logout_btn.style.display = "none";
 
