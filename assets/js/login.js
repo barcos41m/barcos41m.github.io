@@ -57,6 +57,9 @@ var updateUser = function(user){
     user_name_h1.innerHTML = "Hola, " + user.displayName;
     user_image.src = user.photoURL;
     login_panel.style.display = "none"
+    function redireccion(){
+        location.href="index2.hmtl"
+    }
   }
 
   var logout = function(){
