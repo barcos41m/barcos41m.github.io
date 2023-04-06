@@ -5,18 +5,7 @@ user_image      = document.getElementById("user_image"),
 user_name_h1    = document.getElementById("user_name"),
 login_panel   = document.getElementById("login-panel"),
 user_panel   = document.getElementById("user-panel");
-//iniciar con Github
-var loginWithGithub = function(){
 
-    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
-    .then(() => {
-        var provider = new firebase.auth.GithubAuthProvider();
-        return  firebase.auth().signInWithPopup(provider);
-    })
-    .catch((error) => {
-
-    });
-}
 
 //iniciar con google
 var loginWithGoogle = function(){
