@@ -88,13 +88,13 @@
 
       login_btn.style.display = "none";
       logout_btn.style.display = "inline-block";
-      function redireccion(){
-        location.href="index2.hmtl"
-    }
     }
     
 
     var logout = function(){
+      function redireccion(){
+        location.href="index2.hmtl"
+    }
       firebase.auth().signOut().then(function() {
         user_name_h1.innerHTML = "Acceso";
         user_image.src = "assets/images/JimeCoding.jpg";
