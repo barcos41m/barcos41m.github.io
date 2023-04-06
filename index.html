@@ -43,10 +43,63 @@
     </div>
 
     <div id="user-panel" style="display: none;">
+
         <img class="mb-4" src="assets/images/JimeCoding.jpg" id="user_image" alt="" width="100" height="100">
         <h1 id="user_name">UserName</h1>
-        <link href="index2.html"></link>
-        <button onclick="logout()" class="w-100 btn btn-lg btn-danger" id="logout_btn">Salir</button>
+        <button onclick="logout()"
+        <head>
+            <h1>SISTEMA DE BARCOS</h1>
+            <title>Crud operaciones</title>
+            <link type="text/css" rel="stylesheet" href="style.css">
+        </head>
+        
+        <body>
+            <table>
+                <tr>
+                    <td>
+                        <form autocomplete="off" onsubmit="onFormSubmit()">
+                            <div>
+                                <label for="productCode">Codigo De Barco</label>
+                                <input type="text" name="productCode" id="productCode">
+                            </div>
+                            <div>
+                                <label for="product">Nombre De Barco</label>
+                                <input type="text" name="product" id="product">
+                            </div>
+                            <div>
+                                <label for="qty">Qty</label>
+                                <input type="number" name="qty" id="qty">
+                            </div>
+                            <div>
+                                <label for="perPrice">Precio Del Barco</label>
+                                <input type="number" name="perPrice" id="perPrice">
+                            </div>
+        
+                            <div class="form_action--button">
+                                <input type="submit" value="Submit">
+                                <input type="reset" value="Reset">
+                            </div>
+                        </form>
+        
+                        <td>
+                            <table class="list" id="storeList">
+                                <thead>
+                                    <tr>
+                                        <th>Codigo De Barco</th>
+                                        <th>Nombre De Barco</th>
+                                        <th>Qty</th>
+                                        <th>Precio</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+        
+                                </tbody>
+                            </table>
+                        </td>
+                    </td>
+                </tr>
+            </table>
+        </head> class="w-100 btn btn-lg btn-danger" id="logout_btn">Salir</button>
     </div>
 </main>
 

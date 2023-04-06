@@ -25,6 +25,7 @@ var loginWithGoogle = function(){
     .then(() => {
         var provider = new firebase.auth.GoogleAuthProvider();
         return  firebase.auth().signInWithPopup(provider);
+        
     })
     .catch((error) => {
     });
