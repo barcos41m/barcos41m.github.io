@@ -1,3 +1,12 @@
+const loggedInLinks=document.querySelectorAll('.logged-in')
+const logincheck = user =>{
+    if(user){
+        loggedInLinks.forEach(Link => Link.style.display = 'block')
+
+    } else{
+        loggedInLinks.forEach(Link => Link.style.display = 'nose')
+    }
+}
 //variables
 var login_btn     = document.getElementById("login_btn"),
 logout_btn      = document.getElementById("logout_btn"),
