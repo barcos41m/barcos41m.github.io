@@ -43,31 +43,28 @@ src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js">
             margin-bottom: 20px;
 		}
 
-		.btn-github{
-			background-color: rgb(0,0,0) !important;
-			color: white !important;
-            margin-bottom: 20px;
-		}
-
     </style>
 
 <body class="text-center">
 
 <main class="form-signin">
 
-    <div id="login-panel" style="display: none;">
-        <img class="mb-4" src="assets/images/JimeCoding.jpg" alt="" width="100" height="100">
-        <h1 class="h3 mb-3 fw-normal">Acceso</h1>
-        <button onclick="loginWithGoogle()" class="w-100 btn btn-lg btn-google">Iniciar con Google</button>
-        <button onclick="loginFacebook()" class="w-100 btn btn-lg btn-facebook" id="login_btn">Iniciar con Facebook</button>
-    </div>
 
-    <div id="user-panel" style="display: none;">
-
-        <img class="mb-4" src="assets/images/JimeCoding.jpg" id="user_image" alt="" width="100" height="100">
-        <h1 id="user_name">UserName</h1>
-    </div>
     <head>
+        <div id="login-panel" style="display: none;">
+            <img class="mb-4" src="assets/images/JimeCoding.jpg" alt="" width="100" height="100">
+            <h1 class="h3 mb-3 fw-normal">Acceso</h1>
+            <button onclick="loginWithGoogle()" class="w-100 btn btn-lg btn-google">Iniciar con Google</button>
+            <button onclick="loginFacebook()" class="w-100 btn btn-lg btn-facebook" id="login_btn">Iniciar con Facebook</button>
+        </div>
+    
+        <div id="user-panel" style="display: none;">
+    
+            <img class="mb-4" src="assets/images/JimeCoding.jpg" id="user_image" alt="" width="100" height="100">
+            <h1 id="user_name">UserName</h1>
+            <button onclick="logout()" class="w-100 btn btn-lg btn-danger" id="logout_btn">Salir</button>
+        </div>
+        
         <h1>SISTEMA DE BARCOS</h1>
         <title>Crud operaciones</title>
         <link type="text/css" rel="stylesheet" href="style.css">
@@ -141,7 +138,6 @@ src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js">
     
            
     </body>
-    <button onclick="logout()" class="w-100 btn btn-lg btn-danger" id="logout_btn">Salir</button>
 </main>
 </body>
 </html>
