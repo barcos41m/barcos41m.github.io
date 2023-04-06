@@ -1,126 +1,76 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width,
-       initial-scale=1.0">
-  <title>Sesión</title>
-  <script src="indexx.html"></script>
-  <!--
-    Carga el núcleo de Firebase
-    JS SDK
-  -->
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js">
-    </script>
-  <!--
-    Agrega el manejo de
-    autenticación.
-  -->
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js">
-    </script>
-  <!--
-    Agrega el manejo de bases de
-    datos.
-  -->
-  <script
-    src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js">
-    </script>
-  <!--
-    Configura la app usando la
-    información del sitio de
-    Firebase.
-  -->
-  <script src="google-login.html">
-  </script>
-  <script src="js/init.js">
-  </script>
-  <script type="module"
-    src="cmp/mi-nav.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-footer.js">
-    </script>
-  <script type="module"
-    src="cmp/mi-progreso.js">
-    </script>
-  <link rel="stylesheet"
-    href="css/estilos.css">
-</head>
-<head>
-    <h1>SISTEMA DE BARCOS</h1>
-    <title>Crud operaciones</title>
-    <link type="text/css" rel="stylesheet" href="style.css">
-</head>
+	<title>Acceso de Usuarios</title>
 
-<body>
-    <table>
-        <tr>
-            <td>
-                <form autocomplete="off" onsubmit="onFormSubmit()">
-                    <div>
-                        <label for="productCode">Codigo De Barco</label>
-                        <input type="text" name="productCode" id="productCode">
-                    </div>
-                    <div>
-                        <label for="product">Nombre De Barco</label>
-                        <input type="text" name="product" id="product">
-                    </div>
-                    <div>
-                        <label for="qty">Qty</label>
-                        <input type="number" name="qty" id="qty">
-                    </div>
-                    <div>
-                        <label for="perPrice">Precio Del Barco</label>
-                        <input type="number" name="perPrice" id="perPrice">
-                    </div>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+  rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+  crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/login.css">
 
-                    <div class="form_action--button">
-                        <input type="submit" value="Submit">
-                        <input type="reset" value="Reset">
-                    </div>
-                </form>
+    <style>
 
-                <td>
-                    <table class="list" id="storeList">
-                        <thead>
-                            <tr>
-                                <th>Codigo De Barco</th>
-                                <th>Nombre De Barco</th>
-                                <th>Qty</th>
-                                <th>Precio</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+        #login-panel .btn-google{
+			background-color: rgb(219,68,55) !important;
+			color: white !important;
+            margin-bottom: 20px;
+		}
 
-                        </tbody>
-                    </table>
-                </td>
-            </td>
-        </tr>
-    </table>
-</head>
-<script src="js/init.js">
+		.btn-facebook{
+			background-color: rgb(66,103,178) !important;
+			color: white !important;
+            margin-bottom: 20px;
+		}
+
+		.btn-github{
+			background-color: rgb(0,0,0) !important;
+			color: white !important;
+            margin-bottom: 20px;
+		}
+
+    </style>
+
+<body class="text-center">
+
+<main class="form-signin">
+
+    <div id="login-panel" style="display: none;">
+        <img class="mb-4" src="assets/images/JimeCoding.jpg" alt="" width="100" height="100">
+        <h1 class="h3 mb-3 fw-normal">Acceso</h1>
+        <button onclick="loginWithGithub()" class="w-100 btn btn-lg btn-github">Iniciar con Github</button>
+        <button onclick="loginWithGoogle()" class="w-100 btn btn-lg btn-google">Iniciar con Google</button>
+        <button onclick="loginFacebook()" class="w-100 btn btn-lg btn-facebook" id="login_btn">Iniciar con Facebook</button>
+    </div>
+
+    <div id="user-panel" style="display: none;">
+        <img class="mb-4" src="assets/images/JimeCoding.jpg" id="user_image" alt="" width="100" height="100">
+        <h1 id="user_name">UserName</h1>
+        <button onclick="logout()" class="w-100 btn btn-lg btn-danger" id="logout_btn">Salir</button>
+    </div>
+</main>
+
+<script
+src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js">
 </script>
-<script type="module"
-  src="cmp/mi-nav.js">
-  </script>
-<script type="module"
-  src="cmp/mi-footer.js">
-  </script>
-<script type="module"
-  src="cmp/mi-progreso.js">
-  </script>
-<script  src="script.js"></script>
+<!--
+Agrega el manejo de
+autenticación.
+-->
+<script
+src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js">
 </script>
-<script src="segu.js"></script>
-<script type="module"
-    src="CtrlSesion.js"></script>
-    <script src="iniciarsesiongoogle.html"></script>
-    <script src="log.js"></script>
+<!--
+Agrega el manejo de bases de
+datos.
+-->
+<script
+src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js">
+</script>
 
-       
+  <script src="assets/js/config.js"></script>
+
+  <script src="assets/js/login.js"></script>
+
+
 </body>
 </html>
