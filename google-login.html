@@ -83,7 +83,7 @@
 
     //agregar datos del usuario
     var updateUser = function(user){
-      user_name_h1.innerHTML = "Hola, " + user.displayName;
+      user_name_h1.innerHTML = "No hola, " + user.displayName;
       user_image.src = user.photoURL;
 
       login_btn.style.display = "none";
@@ -94,7 +94,7 @@
     var logout = function(){
       firebase.auth().signOut().then(function() {
         user_name_h1.innerHTML = "Acceso";
-        user_image.src = "";
+        user_image.src = "assets/images/JimeCoding.jpg";
         login_btn.style.display = "inline-block";
         logout_btn.style.display = "none";
 
